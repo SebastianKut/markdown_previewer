@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+const marked = window.marked;
+
+marked.setOptions({
+    breaks: true,
+  });
 
 class Previewer extends Component {
     render() {
+        const renderInput = (string) => marked(string);
         return (
             <div id="preview-wrapper">
                 <div className="header">
                     <p>Previewer</p>
-                    <button className="btn">X</button>
                 </div>
-                <div id="preview">{this.props.display}</div>
+                <div id="preview" dangerouslySetInnerHTML={{__html: renderInput(this.props.display)}}></div>
             </div>
         )
     }

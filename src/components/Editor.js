@@ -6,10 +6,9 @@ class Editor extends Component {
             <div id="editor-wrapper">
                 <div className="header">
                     <p>Editor</p>
-                    <button className="btn">X</button>
                 </div>
                 <div id="input-wrapper">
-                    <textarea id="editor" onChange={this.props.handleChange}/>
+        <textarea id="editor" onChange={this.props.handleChange}>{this.props.input}</textarea>
                 </div>
             </div>
         )
